@@ -2,22 +2,23 @@
 <html>
 <head>
   <title>NuestraPrimera</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
 <nav class="navbar navbar-inverse navbar-fixed-top" id="main-nav">
+  <a href="/" class="left">Logo</a>
 
-  <div id="nav-container">
+  <div class="right" id="nav-container">
     <div>
       <ul class="nav navbar-nav">
         <li>
-          <a href="#">Login</a>
+          <%= link_to 'Login', login_path %>
         </li>
         <li>
-          <a href="#">About us</a>
+          <%= link_to 'About us ', about_path %>
         </li>
       </ul>
     </div>
@@ -25,7 +26,9 @@
 
 </nav>
 
-<%= yield %>
+<div id="main-container">
+  <%= yield %>
+</div>
 
 <footer class="footer">
   <div class="container">
